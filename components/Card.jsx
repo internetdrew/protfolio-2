@@ -5,7 +5,7 @@ const Card = ({ project }) => {
   const { name, description, link, repo, screenshot } = project;
 
   return (
-    <div className='bg-slate-100 py-6 rounded-lg overflow-hidden border-2'>
+    <div className='bg-slate-100 py-6 rounded-lg overflow-hidden border-2 hover:shadow-xl hover:shadow-pink-600/50'>
       <div className='w-full opacity-70 hover:opacity-100 transition-all duration-300'>
         <Image
           src={screenshot}
@@ -23,12 +23,12 @@ const Card = ({ project }) => {
           </button>
           <ul className='flex justify-end gap-2 text-3xl text-gray-900'>
             <li>
-              <a href=''>
+              <a href={link} target='_blank'>
                 <AiOutlineLink />
               </a>
             </li>
             <li>
-              <a href=''>
+              <a href={repo} target='_blank'>
                 <AiFillGithub />
               </a>
             </li>
