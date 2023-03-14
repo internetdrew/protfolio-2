@@ -14,12 +14,12 @@ const About = () => {
           </h4>
           <a
             href=''
-            className='bg-pink-600 text-lg px-4 py-2 text-slate-200 font-semibold rounded-lg flex items-center gap-2'
+            className='bg-pink-600 text-lg px-4 py-2 text-slate-200 rounded-lg flex items-center gap-2'
           >
             Download resume <AiOutlineDownload className='text-lg' />
           </a>
         </div>
-        <p className='text-xl text-gray-800 dark:text-gray-200'>
+        <p className='text-xl text-gray-800 dark:text-slate-200'>
           I began progrogrammng in 2021 by learning Python, which tapped me into
           a former self, once that hadn't felt this alive since childhood when I
           was creating macros to play games for me while I was out running
