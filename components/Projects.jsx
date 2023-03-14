@@ -14,7 +14,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className='w-full mx-auto mt-20 md:w-5/6'>
+    <section id='projects' className='w-full mx-auto mt-20 md:w-5/6'>
       <h3 className='text-center text-3xl font-bold mb-10 dark:text-pink-600 md:text-4xl'>
         Projects
       </h3>

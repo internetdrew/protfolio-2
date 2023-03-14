@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <section className='w-full mx-auto mt-20 md:w-5/6 pb-10'>
+    <section id='contact' className='w-full mx-auto mt-20 md:w-5/6 pb-10'>
       <h3 className='text-center text-3xl font-bold mb-4 dark:text-pink-600 md:text-4xl'>
         Contact
       </h3>

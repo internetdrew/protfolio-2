@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Hero, Navbar, About, Projects, Contact } from '@/components';
+import { Hero, Navbar, About, Projects, Contact, Footer } from '@/components';
 import { useState } from 'react';
 
 export default function Home() {
@@ -18,6 +18,9 @@ export default function Home() {
         <Projects />
         <Contact />
       </main>
+      <footer className='bg-slate-100 text-gray-900 sm:px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
+        <Footer />
+      </footer>
     </div>
   );
 }

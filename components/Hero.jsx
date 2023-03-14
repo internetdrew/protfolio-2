@@ -4,7 +4,7 @@ import Image from 'next/image';
 import me from '/public/me.png';
 const Hero = () => {
   return (
-    <section className='pt-40'>
+    <section className='pt-40' id='home'>
       <div className='text-center'>
         <h2 className='text-3xl pt-2 font-bold dark:text-slate-200'>
           <Link href='/'>Andrew Rowley</Link>

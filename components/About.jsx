@@ -3,7 +3,7 @@ import { AiOutlineDownload } from 'react-icons/ai';
 
 const About = () => {
   return (
-    <section className='w-full mx-auto mt-20 md:w-5/6'>
+    <section id='about' className='w-full mx-auto mt-20 md:w-5/6'>
       <h3 className='text-center text-3xl font-bold mb-10 dark:text-pink-600 md:text-4xl'>
         About Me
       </h3>

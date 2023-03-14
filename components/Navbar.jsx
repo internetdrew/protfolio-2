@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { MdDarkMode, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const sections = ['home', 'about', 'projects', 'skills', 'contact'];
+  const sections = ['home', 'about', 'projects', 'contact'];
 
   return (
     <nav className='bg-slate-100 fixed top-0 left-0 w-full py-8 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40 text-gray-900 dark:bg-gray-900'>
@@ -15,9 +16,17 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         {sections.map(section => (
           <li
             key={`main-${section}`}
-            className='capitalize text-xl font-semibold dark:text-pink-600'
+            className='capitalize text-xl font-semibold cursor-pointer dark:text-pink-600'
           >
-            <a href={`#${section}`}>{section}</a>
+            <Link
+              to={`${section}`}
+              offset={-100}
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              {section}
+            </Link>
           </li>
         ))}
         <li>
