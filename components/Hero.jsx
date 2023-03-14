@@ -5,10 +5,10 @@ const Hero = () => {
   return (
     <section className='pt-40'>
       <div className='text-center'>
-        <h2 className='text-4xl pt-2 font-bold dark:text-slate-200'>
+        <h2 className='text-3xl pt-2 font-bold dark:text-slate-200'>
           Andrew Rowley
         </h2>
-        <h3 className='text-3xl font-semibold py-4 text-pink-700 '>
+        <h3 className='text-4xl font-semibold py-4 text-pink-700 '>
           Software Engineer
         </h3>
         <p className='text-2xl text-gray-800 mb-6 dark:text-gray-400'>
