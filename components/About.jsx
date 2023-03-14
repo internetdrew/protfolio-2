@@ -9,12 +9,12 @@ const About = () => {
       </h3>
       <div className='grid md:grid-cols-2 gap-4 items-center md:items-start'>
         <div className='flex flex-col items-center gap-4 mb-10 md:items-start md:justify-start'>
-          <h4 className='text-3xl font-bold text-center md:text-left dark:text-slate-50'>
+          <h4 className='text-3xl font-bold text-center md:text-left dark:text-slate-200'>
             B2B Content Strategist turned Software Engineer
           </h4>
           <a
             href=''
-            className='bg-pink-600 text-lg px-4 py-2 text-slate-50 font-semibold rounded-lg flex items-center gap-2'
+            className='bg-pink-600 text-lg px-4 py-2 text-slate-200 font-semibold rounded-lg flex items-center gap-2'
           >
             Download resume <AiOutlineDownload className='text-lg' />
           </a>
