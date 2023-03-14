@@ -7,7 +7,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   const sections = ['home', 'about', 'projects', 'skills', 'contact'];
 
   return (
-    <nav className='fixed top-0 left-0 w-full py-10 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40'>
+    <nav className='bg-slate-100 fixed top-0 left-0 w-full py-8 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40 dark:bg-gray-900'>
       <h1 className='text-2xl font-semibold dark:text-pink-600'>
         Andrew Rowley
       </h1>
