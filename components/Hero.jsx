@@ -3,9 +3,9 @@ import Image from 'next/image';
 import me from '/public/me.png';
 const Hero = () => {
   return (
-    <section>
+    <section className='pt-40'>
       <div className='text-center'>
-        <h2 className='text-5xl py-2 font-bold text-pink-700'>Andrew Rowley</h2>
+        <h2 className='text-4xl pt-2 font-bold text-pink-700'>Andrew Rowley</h2>
         <h3 className='text-3xl font-semibold py-4 dark:text-slate-200'>
           Software Engineer
         </h3>

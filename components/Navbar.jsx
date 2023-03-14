@@ -7,7 +7,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   const sections = ['home', 'about', 'projects', 'skills', 'contact'];
 
   return (
-    <nav className='fixed backdrop-blur-3xl top-0 left-0 w-full py-10 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40'>
+    <nav className='fixed top-0 left-0 w-full py-10 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40'>
       <h1 className='text-2xl font-semibold dark:text-pink-600'>
         Andrew Rowley
       </h1>
@@ -21,6 +21,14 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           </li>
         ))}
         <li>
+          <a
+            href='#'
+            className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-50 font-semibold px-4 py-2 rounded-lg ml-2 text-lg dark:text-gray-900'
+          >
+            Resume
+          </a>
+        </li>
+        <li>
           {darkMode ? (
             <MdLightMode
               className='cursor-pointer text-2xl text-pink-600'
@@ -32,14 +40,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               onClick={() => setDarkMode(!darkMode)}
             />
           )}
-        </li>
-        <li>
-          <a
-            href='#'
-            className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-50 font-semibold px-4 py-2 rounded-lg ml-2 text-lg dark:text-gray-900'
-          >
-            Resume
-          </a>
         </li>
       </ul>
       <div className='relative flex justify-center items-center md:hidden'>
