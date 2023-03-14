@@ -31,8 +31,7 @@ const Contact = () => {
         Contact
       </h3>
       <p className='text-2xl text-center text-gray-800 mb-6 dark:text-gray-400'>
-        Thank you for visiting my portfolio! If you'd like to get in touch, feel
-        free to send a message.
+        If you'd like to get in touch, feel free to send a message.
       </p>
       <form
         onSubmit={sendEmail}
