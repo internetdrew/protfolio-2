@@ -14,7 +14,7 @@ const About = () => {
           </h4>
           <a
             href=''
-            className='bg-pink-600 text-lg px-4 py-2 text-slate-200 rounded-lg flex items-center gap-2'
+            className='bg-gradient-to-r from-pink-600 to-pink-700 text-lg px-4 py-2 text-slate-200 rounded-lg font-semibold flex items-center gap-2'
           >
             Download resume <AiOutlineDownload className='text-lg' />
           </a>
