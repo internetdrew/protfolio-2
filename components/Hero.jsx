@@ -1,4 +1,5 @@
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import Link from 'next/link';
 import Image from 'next/image';
 import me from '/public/me.png';
 const Hero = () => {
@@ -6,7 +7,7 @@ const Hero = () => {
     <section className='pt-40'>
       <div className='text-center'>
         <h2 className='text-3xl pt-2 font-bold dark:text-slate-200'>
-          Andrew Rowley
+          <Link href='/'>Andrew Rowley</Link>
         </h2>
         <h3 className='text-4xl font-semibold py-4 text-pink-700 '>
           Software Engineer

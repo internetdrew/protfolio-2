@@ -20,7 +20,7 @@ const Projects = () => {
       </h3>
       <div className='grid lg:grid-cols-2 gap-10'>
         {projects.map(project => (
-          <Card project={project} />
+          <Card key={project.name} project={project} />
         ))}
       </div>
     </section>
