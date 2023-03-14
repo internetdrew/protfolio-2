@@ -5,7 +5,7 @@ const projects = [
   {
     name: 'The Frank Store',
     description:
-      'An online store for collectible images of your favoerite Frank Costanza moments, built with Next.js, Sanity.io headless CMS, Stripe checkout, and more.',
+      'An online store for collectible images of your favorite Frank Costanza moments, built with Next.js, Sanity.io headless CMS, Stripe checkout, and more.',
     link: 'https://the-frank-store.vercel.app/',
     repo: 'https://github.com/internetdrew/the-frank-store',
     screenshot,

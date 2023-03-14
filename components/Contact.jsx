@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const form = useRef(null);
+  const name = useRef(null);
 
   const sendEmail = e => {
     e.preventDefault();
@@ -41,7 +42,7 @@ const Contact = () => {
         <div className='flex flex-col'>
           <label
             htmlFor='name'
-            className='text-2xl font-medium dark:text-pink-600 '
+            className='text-xl font-medium dark:text-pink-600 '
           >
             Name
           </label>
@@ -54,7 +55,7 @@ const Contact = () => {
         <div className='flex flex-col'>
           <label
             htmlFor='email'
-            className='text-2xl font-medium dark:text-pink-600'
+            className='text-xl font-medium dark:text-pink-600'
           >
             Email
           </label>
@@ -67,7 +68,7 @@ const Contact = () => {
         <div className='flex flex-col'>
           <label
             htmlFor='name'
-            className='text-2xl font-medium dark:text-pink-600'
+            className='text-xl font-medium dark:text-pink-600'
           >
             Message
           </label>

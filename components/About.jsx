@@ -20,14 +20,16 @@ const About = () => {
           </a>
         </div>
         <p className='text-xl text-gray-800 dark:text-slate-200'>
-          I began progrogrammng in 2021 by learning Python, which tapped me into
-          a former self, once that hadn't felt this alive since childhood when I
-          was creating macros to play games for me while I was out running
-          errands.
+          I began my programming journey in 2021 by learning Python, which
+          tapped me into my childhood self — a kid who wrote macros that
+          automated gameplay while he was out running errands.
           <br />
           <br />
           Nowadays, I'm all about pragmatic programming, clean code, and
           creating intuitive, scalable, enjoyable software on the internet.
+          <br />
+          <br />
+          And I'm on the hunt for my first full-time role.
         </p>
       </div>
     </section>
