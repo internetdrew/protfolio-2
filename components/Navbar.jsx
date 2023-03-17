@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-scroll';
-import { motion } from 'framer-motion';
 import { MdDarkMode, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 
 const Navbar = ({ darkMode, setDarkMode }) => {
