@@ -20,7 +20,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           {sections.map(section => (
             <li
               key={`main-${section}`}
-              className='capitalize text-xl font-semibold cursor-pointer dark:text-pink-600'
+              className='capitalize text-2xl font-semibold cursor-pointer dark:text-pink-600 md:text-xl'
             >
               <Link
                 href={`#${section}`}
