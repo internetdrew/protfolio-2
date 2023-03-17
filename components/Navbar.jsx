@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { MdDarkMode, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
@@ -6,81 +6,69 @@ import { MdDarkMode, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const sections = ['home', 'about', 'projects', 'contact'];
+  const navRef = useRef(null);
 
   return (
     <nav className='bg-slate-100 fixed top-0 left-0 w-full py-6 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40 text-gray-900 dark:bg-gray-900'>
-      <h1 className='text-2xl font-semibold dark:text-pink-600'>
-        Andrew Rowley
-      </h1>
-      <ul className='hidden items-center gap-6 md:flex'>
-        {sections.map(section => (
-          <li
-            key={`main-${section}`}
-            className='capitalize text-xl font-semibold cursor-pointer dark:text-pink-600'
-          >
-            <Link
+      <p className='text-2xl font-semibold dark:text-pink-600'>Andrew Rowley</p>
+      <div
+        ref={navRef}
+        className={`bg-slate-100 top-20 flex flex-col items-center pt-10 absolute md:static ${
+          showMobileMenu ? 'right-0' : 'right-[-100%]'
+        } w-3/4 h-screen md:h-fit p-5 transition-all duration-300 md:w-auto md:justify-end dark:bg-gray-900`}
+      >
+        <ul className='flex flex-col items-center gap-10 md:gap-6 md:flex-row'>
+          {sections.map(section => (
+            <li
+              key={`main-${section}`}
+              className='capitalize text-xl font-semibold cursor-pointer dark:text-pink-600'
               to={`${section}`}
               offset={-100}
-              spy={true}
-              smooth={true}
+              spy='true'
+              smooth='true'
               duration={500}
             >
               {section}
-            </Link>
+              {/* <Link
+                to={`${section}`}
+                offset={-100}
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                {section}
+              </Link> */}
+            </li>
+          ))}
+          <li>
+            <a
+              href='#'
+              className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-200 font-semibold px-4 py-2 rounded-lg md:ml-2 text-lg'
+            >
+              Resume
+            </a>
           </li>
-        ))}
-        <li>
-          <a
-            href='#'
-            className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-200 font-semibold px-4 py-2 rounded-lg ml-2 text-lg'
-          >
-            Resume
-          </a>
-        </li>
-        <li>
-          {darkMode ? (
-            <MdLightMode
-              className='cursor-pointer text-2xl text-pink-600'
-              onClick={() => setDarkMode(!darkMode)}
-            />
-          ) : (
-            <MdDarkMode
-              className='cursor-pointer text-2xl'
-              onClick={() => setDarkMode(!darkMode)}
-            />
-          )}
-        </li>
-      </ul>
-      <div className='relative flex justify-center items-center md:hidden'>
-        <MdMenu
-          className='text-3xl cursor-pointer dark:text-pink-600'
-          onClick={() => setShowMobileMenu(true)}
-        />
-
-        {showMobileMenu ? (
-          <motion.div
-            whileInView={{ x: [300, 0] }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className='fixed top-0 bottom-0 right-0 z-20 p-1 w-5/6 bg-slate-100 h-screen flex justify-end items-end flex-col shadow-md'
-          >
-            <MdClose
-              onClick={() => setShowMobileMenu(false)}
-              className='text-2xl m-2'
-            />
-            <ul className='h-full w-full flex justify-start items-start flex-col py-2'>
-              {sections.map(section => (
-                <li
-                  onClick={() => setShowMobileMenu(false)}
-                  key={section}
-                  className='capitalize text-xl font-semibold m-1 dark:text-pink-600'
-                >
-                  <a href={`#${section}`}>{section}</a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ) : null}
+          <li>
+            {darkMode ? (
+              <MdLightMode
+                className='cursor-pointer text-2xl text-pink-600 mx-auto'
+                onClick={() => setDarkMode(!darkMode)}
+              />
+            ) : (
+              <MdDarkMode
+                className='cursor-pointer text-2xl mx-auto'
+                onClick={() => setDarkMode(!darkMode)}
+              />
+            )}
+          </li>
+        </ul>
       </div>
+      <button
+        className='text-4xl cursor-pointer text-pink-600 md:hidden'
+        onClick={() => setShowMobileMenu(!showMobileMenu)}
+      >
+        {showMobileMenu ? <MdClose /> : <MdMenu />}
+      </button>
     </nav>
   );
 };
