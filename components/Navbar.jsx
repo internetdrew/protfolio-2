@@ -15,29 +15,27 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         ref={navRef}
         className={`bg-slate-100 top-20 flex flex-col items-center pt-10 absolute md:static ${
           showMobileMenu ? 'right-0' : 'right-[-100%]'
-        } w-3/4 h-screen md:h-fit p-5 transition-[right] ease-in-out duration-300 md:w-auto md:justify-end dark:bg-gray-900`}
+        } w-3/4 h-screen md:h-0 p-5 transition-[right] ease-in-out duration-300 md:w-auto md:justify-end dark:bg-gray-900`}
       >
         <ul className='flex flex-col items-center gap-10 md:gap-6 md:flex-row'>
           {sections.map(section => (
             <li
               key={`main-${section}`}
               className='capitalize text-xl font-semibold cursor-pointer dark:text-pink-600'
-              to={`${section}`}
-              offset={-100}
-              spy='true'
-              smooth='true'
-              duration={500}
             >
-              {section}
-              {/* <Link
+              <Link
+                href={`#${section}`}
                 to={`${section}`}
                 offset={-100}
                 spy={true}
                 smooth={true}
                 duration={500}
+                onClick={() => {
+                  showMobileMenu && setShowMobileMenu(false);
+                }}
               >
                 {section}
-              </Link> */}
+              </Link>
             </li>
           ))}
           <li>
