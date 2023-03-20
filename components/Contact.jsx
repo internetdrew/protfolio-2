@@ -48,7 +48,7 @@ const Contact = () => {
           </label>
           <input
             type='text'
-            className='p-3 text-xl rounded-lg outline-none'
+            className='p-3 text-xl rounded-lg outline-none shadow-lg'
             name='from_name'
           />
         </div>
@@ -61,7 +61,7 @@ const Contact = () => {
           </label>
           <input
             type='email'
-            className='p-3 text-xl rounded-lg outline-none'
+            className='p-3 text-xl rounded-lg outline-none shadow-lg'
             name='reply_to'
           />
         </div>
@@ -76,12 +76,12 @@ const Contact = () => {
             name='message'
             cols='30'
             rows='8'
-            className='p-4 text-xl rounded-lg outline-none'
+            className='p-4 text-xl rounded-lg outline-none shadow-lg'
           ></textarea>
         </div>
         <button
           type='submit'
-          className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-200 font-semibold px-4 py-2 rounded-lg text-xl'
+          className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-200 font-semibold px-4 py-2 rounded-lg text-xl shadow-lg'
         >
           Send
         </button>
