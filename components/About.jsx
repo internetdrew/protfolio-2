@@ -12,7 +12,7 @@ const About = () => {
             B2B Content Strategist turned Software Engineer
           </h4>
           <a
-            href='resume.pdf'
+            href='01AndrewRowleyResume.pdf'
             download='01AndrewRowleyResume.pdf'
             className='bg-gradient-to-r from-pink-600 to-pink-700 text-lg px-4 py-2 text-slate-200 rounded-lg font-semibold flex items-center gap-2'
           >

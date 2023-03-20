@@ -39,7 +39,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           ))}
           <li>
             <a
-              href='resume.pdf'
+              href='01AndrewRowleyResume.pdf'
               download='01AndrewRowleyResume.pdf'
               className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-200 font-semibold px-4 py-2 rounded-lg md:ml-2 text-lg'
             >
