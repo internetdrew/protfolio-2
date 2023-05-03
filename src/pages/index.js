@@ -1,5 +1,12 @@
 import Head from 'next/head';
-import { Hero, Navbar, About, Projects, Contact, Footer } from '@/components';
+import {
+  Hero,
+  Navbar,
+  About,
+  Projects,
+  Contact,
+  Footer,
+} from '@/src/components';
 import { useState } from 'react';
 
 export default function Home() {

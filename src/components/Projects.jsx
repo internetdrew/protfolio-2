@@ -1,4 +1,4 @@
-import { Card } from '@/components';
+import { Card } from '@/src/components';
 import screenshot from '@/public/screen.png';
 
 const projects = [
