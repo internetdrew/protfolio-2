@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Blog = () => {
+export default function Blog() {
+  const [darkMode, setDarkMode] = useState();
   return <div>index</div>;
-};
-
-export default Blog;
+}
