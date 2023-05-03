@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
-import { Link } from 'react-scroll';
+import Link from 'next/link';
+import { Link as Scroll } from 'react-scroll';
 import { MdDarkMode, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 import { useRecoilState } from 'recoil';
 import { darkModeState } from '../atoms/darkModeAtom';
@@ -7,7 +8,7 @@ import { darkModeState } from '../atoms/darkModeAtom';
 const Navbar = () => {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const sections = ['home', 'about', 'projects', 'contact'];
+  const sections = ['home', 'about', 'blog', 'projects', 'contact'];
   const navRef = useRef(null);
 
   return (
@@ -25,19 +26,23 @@ const Navbar = () => {
               key={`main-${section}`}
               className='capitalize text-2xl font-semibold cursor-pointer dark:text-pink-600 md:text-xl'
             >
-              <Link
-                href={`#${section}`}
-                to={`${section}`}
-                offset={-100}
-                spy={true}
-                smooth={true}
-                duration={500}
-                onClick={() => {
-                  showMobileMenu && setShowMobileMenu(false);
-                }}
-              >
-                {section}
-              </Link>
+              {section === 'blog' ? (
+                <Link href={'/blog'}>Blog</Link>
+              ) : (
+                <Scroll
+                  href={`#${section}`}
+                  to={`${section}`}
+                  offset={-100}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={() => {
+                    showMobileMenu && setShowMobileMenu(false);
+                  }}
+                >
+                  {section}
+                </Scroll>
+              )}
             </li>
           ))}
           <li>
