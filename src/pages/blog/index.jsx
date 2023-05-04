@@ -3,7 +3,7 @@ import { Layout } from '@/src/components';
 export default function Blog() {
   return (
     <Layout title="Andrew Rowley's Blog">
-      <div>hello</div>
+      <div className='pt-40 dark:text-slate-200'>hello</div>
     </Layout>
   );
 }

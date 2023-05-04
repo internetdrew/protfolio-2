@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Link as Scroll } from 'react-scroll';
 import { MdDarkMode, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 import { useRecoilState } from 'recoil';
 import { darkModeState } from '../atoms/darkModeAtom';
@@ -9,7 +8,7 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
   const [origin, setOrigin] = useState('');
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const sections = ['home', 'about', 'blog', 'projects', 'contact'];
+  const sections = ['home', 'about', 'projects', 'contact', 'blog'];
   const navRef = useRef(null);
 
   useEffect(() => {
