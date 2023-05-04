@@ -12,6 +12,7 @@ const query = gql`
       coverPhoto {
         url
       }
+      desc
       content {
         html
       }
