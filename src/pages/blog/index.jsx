@@ -1,7 +1,9 @@
-import { useRecoilValue } from 'recoil';
-import { darkModeState } from '@/src/atoms/darkModeAtom';
+import { Layout } from '@/src/components';
 
 export default function Blog() {
-  const darkMode = useRecoilValue(darkModeState);
-  return <div className={darkMode ? 'dark' : ''}>index</div>;
+  return (
+    <Layout title="Andrew Rowley's Blog">
+      <div>hello</div>
+    </Layout>
+  );
 }
