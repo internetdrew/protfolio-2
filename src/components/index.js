@@ -6,3 +6,4 @@ export { default as Card } from './Card';
 export { default as Contact } from './Contact';
 export { default as Footer } from './Footer';
 export { default as Layout } from './Layout';
+export { default as BlogCard } from './BlogCard';

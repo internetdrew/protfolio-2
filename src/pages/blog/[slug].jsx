@@ -9,7 +9,7 @@ const Post = () => {
 
   return (
     <Layout>
-      <div>Blog post</div>
+      <div className='pt-40 dark:text-slate-200'>Blog post</div>
     </Layout>
   );
 };
