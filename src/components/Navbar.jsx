@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { MdDarkMode, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 import { useRecoilState } from 'recoil';
@@ -6,15 +6,9 @@ import { darkModeState } from '../atoms/darkModeAtom';
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
-  const [origin, setOrigin] = useState('');
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const sections = ['home', 'about', 'projects', 'contact', 'blog'];
   const navRef = useRef(null);
-
-  useEffect(() => {
-    setOrigin(() => window.location.origin);
-    console.log(origin);
-  }, []);
 
   return (
     <nav
