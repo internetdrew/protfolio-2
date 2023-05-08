@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { MdDarkMode, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 import { useRecoilState } from 'recoil';
@@ -8,13 +8,9 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const sections = ['home', 'about', 'projects', 'contact', 'blog'];
-  const navRef = useRef(null);
 
   return (
-    <nav
-      className={`bg-slate-100 fixed top-0 left-0 w-full py-6 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40 text-gray-900 dark:bg-gray-900`}
-      ref={navRef}
-    >
+    <nav className='bg-slate-100 fixed top-0 left-0 w-full py-6 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40 text-gray-900 dark:bg-gray-900'>
       <Link href={'/'} className='text-2xl font-semibold dark:text-pink-600'>
         Andrew Rowley
       </Link>

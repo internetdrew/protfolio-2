@@ -9,10 +9,10 @@ const query = gql`
       publishDate
       slug
       title
+      excerpt
       coverPhoto {
         url
       }
-      desc
       content {
         html
       }
@@ -35,7 +35,6 @@ export const getStaticProps = async () => {
 };
 
 export default function Blog({ posts }) {
-  console.log(posts);
   return (
     <Layout title="Andrew Rowley's Blog">
       <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 gap-16 dark:text-slate-200'>

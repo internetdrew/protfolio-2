@@ -21,7 +21,7 @@ const BlogCard = ({ post }) => {
           </h2>
           <p className='text-lg font-medium'>{post?.excerpt}</p>
         </div>
-        <Author post={post} />
+        <Author post={post} inCard={true} />
       </Link>
     </div>
   );
