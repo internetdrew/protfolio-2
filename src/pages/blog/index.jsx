@@ -37,7 +37,7 @@ export const getStaticProps = async () => {
 export default function Blog({ posts }) {
   return (
     <Layout title="Andrew Rowley's Blog">
-      <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 gap-16 lg:gap-8 dark:text-slate-200'>
+      <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 gap-16 lg:gap-2 dark:text-slate-200'>
         {posts.map(post => (
           <BlogCard key={post?.id} post={post} />
         ))}
