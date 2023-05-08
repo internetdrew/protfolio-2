@@ -82,7 +82,7 @@ const Post = ({ post }) => {
         <meta property='og:site_name' content='Internet Drew' />
         <meta name='twitter:image:alt' content='Alt text for image' />
       </Head>
-      <article className='pt-40 pb-20 mx-auto max-w-3xl dark:text-slate-200 flex flex-col items-center'>
+      <article className='pt-20 pb-20 mx-auto max-w-3xl dark:text-slate-200 flex flex-col items-center md:pt-40'>
         <h1 className='mt-10 text-center text-pink-600 font-bold text-4xl sm:text-6xl'>
           {post?.title}
         </h1>
