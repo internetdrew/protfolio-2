@@ -29,7 +29,9 @@ const About = () => {
           creating intuitive, scalable, enjoyable software on the internet.
           <br />
           <br />
-          And I'm on the hunt for my first full-time role.
+          <span className='font-bold'>
+            And I'm on the hunt for a full-time role!
+          </span>
         </p>
       </div>
     </section>
