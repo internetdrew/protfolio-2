@@ -1,23 +1,51 @@
-import { useRef } from 'react';
+'use client';
+
+import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { useEffect } from 'react';
+
+const schema = z.object({
+  name: z.string().min(1, { message: 'Name is required before sending.' }),
+  email: z
+    .string()
+    .email({ message: 'Please add a valid email address before sending.' }),
+  message: z
+    .string()
+    .min(1, { message: 'Please add a message before sending.' }),
+});
 
 const Contact = () => {
-  const form = useRef(null);
-  const name = useRef(null);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    submittedData,
+    formState,
+    formState: { errors },
+    formState: { isSubmitSuccessful },
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
-  const sendEmail = e => {
-    e.preventDefault();
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
 
+  const sendEmail = formValues => {
     emailjs
-      .sendForm(
+      .send(
         process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_KEY,
         process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
-        form.current,
+        formValues,
         process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
       )
       .then(
-        result => {
-          e.target.reset();
+        res => {
+          console.log(res);
         },
         error => {
           console.error(error.text);
@@ -34,9 +62,8 @@ const Contact = () => {
         If you'd like to get in touch, feel free to send a message.
       </p>
       <form
-        onSubmit={sendEmail}
+        onSubmit={handleSubmit(sendEmail)}
         className='w-full lg:w-3/5 mx-auto flex flex-col gap-4'
-        ref={form}
       >
         <div className='flex flex-col'>
           <label
@@ -48,8 +75,11 @@ const Contact = () => {
           <input
             type='text'
             className='p-3 text-xl rounded-lg outline-none shadow-lg'
-            name='from_name'
+            {...register('name')}
           />
+          <small className='dark:text-pink-600 text-sm mt-1'>
+            {errors?.name?.message}
+          </small>
         </div>
         <div className='flex flex-col'>
           <label
@@ -61,22 +91,28 @@ const Contact = () => {
           <input
             type='email'
             className='p-3 text-xl rounded-lg outline-none shadow-lg'
-            name='reply_to'
+            {...register('email')}
           />
+          <small className='dark:text-pink-600 text-sm mt-1'>
+            {errors?.email?.message}
+          </small>
         </div>
         <div className='flex flex-col'>
           <label
-            htmlFor='name'
+            htmlFor='message'
             className='text-xl font-medium dark:text-pink-600'
           >
             Message
           </label>
           <textarea
-            name='message'
             cols='30'
             rows='8'
             className='p-4 text-xl rounded-lg outline-none shadow-lg'
-          ></textarea>
+            {...register('message')}
+          />
+          <small className='dark:text-pink-600 text-sm mt-1'>
+            {errors?.message?.message}
+          </small>
         </div>
         <button
           type='submit'
