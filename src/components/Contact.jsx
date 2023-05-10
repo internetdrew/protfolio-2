@@ -21,8 +21,6 @@ const Contact = () => {
     register,
     handleSubmit,
     reset,
-    submittedData,
-    formState,
     formState: { errors },
     formState: { isSubmitSuccessful },
   } = useForm({
