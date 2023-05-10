@@ -1,6 +1,7 @@
 import { Layout } from '@/src/components';
 import { request, gql } from 'graphql-request';
 import { BlogCard } from '@/src/components';
+import Head from 'next/head';
 
 const query = gql`
   query MyQuery {
@@ -12,9 +13,6 @@ const query = gql`
       excerpt
       coverPhoto {
         url
-      }
-      content {
-        html
       }
       author {
         name
@@ -36,7 +34,10 @@ export const getStaticProps = async () => {
 
 export default function Blog({ posts }) {
   return (
-    <Layout title="Andrew Rowley's Blog">
+    <Layout>
+      <Head>
+        <title>Andrew Rowley's Blog</title>
+      </Head>
       <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 gap-16 max-w-5xl mx-auto dark:text-slate-200'>
         {posts.map(post => (
           <BlogCard key={post?.id} post={post} />

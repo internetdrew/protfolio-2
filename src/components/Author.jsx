@@ -1,10 +1,6 @@
 import Image from 'next/image';
-import { darkModeState } from '../atoms/darkModeAtom';
-import { useRecoilValue } from 'recoil';
 
 const Author = ({ post, inCard }) => {
-  const darkMode = useRecoilValue(darkModeState);
-
   return (
     <div className='flex items-center mt-auto'>
       <Image
