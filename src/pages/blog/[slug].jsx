@@ -4,14 +4,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import { useEffect, useState } from 'react';
-// import { GiBulletBill } from 'react-icons/gi';
-// import SyntaxHighlighter from 'react-syntax-highlighter';
-// import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Prism from 'prismjs';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import Link from 'next/link';
 
 const query = gql`
   query Post($slug: String!) {
