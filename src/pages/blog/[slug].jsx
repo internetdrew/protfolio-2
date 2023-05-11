@@ -2,6 +2,8 @@ import { Author, Layout } from '@/src/components';
 import { request, gql } from 'graphql-request';
 import Head from 'next/head';
 import Image from 'next/image';
+import { RichText } from '@graphcms/rich-text-react-renderer';
+import { useEffect, useState } from 'react';
 
 const query = gql`
   query Post($slug: String!) {
@@ -23,7 +25,7 @@ const query = gql`
         }
       }
       content {
-        html
+        raw
       }
     }
   }
@@ -59,6 +61,13 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Post = ({ post }) => {
+  const [showRichText, setShowRichText] = useState(false);
+
+  useEffect(() => {
+    setShowRichText(true);
+  }, []);
+
+  console.log(post.content.raw);
   return (
     <Layout>
       <Head>
@@ -82,26 +91,38 @@ const Post = ({ post }) => {
         <meta property='og:site_name' content='Internet Drew' />
         <meta name='twitter:image:alt' content='Alt text for image' />
       </Head>
-      <article className='pt-20 pb-20 mx-auto max-w-3xl dark:text-slate-200 flex flex-col items-center md:pt-40'>
+      <article className='pt-20 pb-20 mx-auto max-w-3xl love inset-y-auto1xl dark:text-slate-200 flex flex-col  md:pt-40'>
         <h1 className='mt-10 text-center text-pink-600 font-bold text-4xl sm:text-6xl'>
           {post?.title}
         </h1>
         <blockquote className='text-center mt-4 text-xl sm:text-2xl font-medium max-w-2xl text-slate-900 mb-4 dark:text-slate-200'>
           {post?.excerpt}
         </blockquote>
-        <Author post={post} />
+        <div className='self-center'>
+          <Author post={post} />
+        </div>
         <Image
           src={post?.coverPhoto?.url}
           width={1200}
           height={600}
           alt='blog post image'
           priority
-          className='mt-10'
+          className='my-10'
         />
-        <div
-          className='w-full mt-10 text-xl leading-10 sm:text-2xl'
-          dangerouslySetInnerHTML={{ __html: post?.content?.html }}
-        ></div>
+        {showRichText && (
+          <RichText
+            content={post?.content?.raw.children}
+            renderers={{
+              p: ({ children }) => <p className='text-2xl mb-6'>{children}</p>,
+              h2: ({ children }) => (
+                <h2 className='text-pink-600 font-bold text-4xl mb-2'>
+                  {children}
+                </h2>
+              ),
+              bold: ({ children }) => <strong>{children}</strong>,
+            }}
+          />
+        )}
       </article>
     </Layout>
   );

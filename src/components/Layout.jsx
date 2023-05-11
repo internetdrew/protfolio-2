@@ -7,10 +7,10 @@ const Layout = ({ children }) => {
   return (
     <div className={darkMode ? 'dark' : ''}>
       <Navbar />
-      <main className='bg-slate-100 min-h-screen text-gray-900 px-10 sm:px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
+      <main className='bg-slate-200 min-h-screen text-gray-900 px-10 sm:px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
         {children}
       </main>
-      <footer className='bg-slate-100 text-gray-900 sm:px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
+      <footer className='bg-slate-200 text-gray-900 sm:px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
         <Footer />
       </footer>
     </div>

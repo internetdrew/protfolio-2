@@ -17,14 +17,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className='bg-slate-100 fixed top-0 left-0 w-full py-6 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40 text-gray-900 dark:bg-gray-900'
+      className='bg-slate-200 fixed top-0 left-0 w-full py-6 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40 text-gray-900 dark:bg-gray-900'
       onClick={handleNavClick}
     >
       <Link href={'/'} className='text-2xl font-semibold dark:text-pink-600'>
         Andrew Rowley
       </Link>
       <div
-        className={`bg-slate-100 top-20 flex flex-col items-center pt-10 absolute md:static ${
+        className={`bg-slate-200 top-20 flex flex-col items-center pt-10 absolute md:static ${
           showMobileMenu ? 'right-0' : 'right-[-100%]'
         } w-3/4 h-screen md:h-0 p-5 transition-[right] ease-in-out duration-300 md:w-auto md:justify-end dark:bg-gray-900`}
       >
