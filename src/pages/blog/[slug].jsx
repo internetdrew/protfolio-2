@@ -4,6 +4,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import { useEffect, useState } from 'react';
+// import { GiBulletBill } from 'react-icons/gi';
+// import SyntaxHighlighter from 'react-syntax-highlighter';
+// import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Prism from 'prismjs';
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import Link from 'next/link';
 
 const query = gql`
   query Post($slug: String!) {
@@ -67,7 +75,10 @@ const Post = ({ post }) => {
     setShowRichText(true);
   }, []);
 
-  console.log(post.content.raw);
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [showRichText]);
+
   return (
     <Layout>
       <Head>
@@ -91,7 +102,7 @@ const Post = ({ post }) => {
         <meta property='og:site_name' content='Internet Drew' />
         <meta name='twitter:image:alt' content='Alt text for image' />
       </Head>
-      <article className='pt-20 pb-20 mx-auto max-w-3xl love inset-y-auto1xl dark:text-slate-200 flex flex-col  md:pt-40'>
+      <article className='pt-20 pb-20 mx-auto max-w-3xl love inset-y-auto1xl language-javascript dark:text-slate-200 flex flex-col  md:pt-40'>
         <h1 className='mt-10 text-center text-pink-600 font-bold text-4xl sm:text-6xl'>
           {post?.title}
         </h1>
@@ -113,13 +124,48 @@ const Post = ({ post }) => {
           <RichText
             content={post?.content?.raw.children}
             renderers={{
-              p: ({ children }) => <p className='text-2xl mb-6'>{children}</p>,
+              p: ({ children }) => <p className='text-2xl my-3'>{children}</p>,
               h2: ({ children }) => (
-                <h2 className='text-pink-600 font-bold text-4xl mb-2'>
-                  {children}
-                </h2>
+                <h2 className='text-pink-600 font-bold text-4xl'>{children}</h2>
               ),
-              bold: ({ children }) => <strong>{children}</strong>,
+              li: ({ children }) => (
+                <li className='text-2xl items-center mb-1'>{children}</li>
+              ),
+              ol: ({ children }) => (
+                <ol className='list-decimal mb-6'>{children}</ol>
+              ),
+              ul: ({ children }) => <ul className='mb-6'>{children}</ul>,
+              h3: ({ children }) => (
+                <h3 className='text-pink-600 font-semibold text-3xl'>
+                  {children}
+                </h3>
+              ),
+              bold: ({ children }) => (
+                <strong className='text-pink-600'>{children}</strong>
+              ),
+              code_block: ({ children }) => (
+                <pre>
+                  <code>{children}</code>
+                </pre>
+              ),
+              code: ({ children }) => (
+                <span className='text-lg'>
+                  <code>{children}</code>
+                </span>
+              ),
+              a: ({ children, href }) => (
+                <a href={href} target='_blank' className='text-pink-600'>
+                  {children}
+                </a>
+              ),
+              blockquote: ({ children }) => (
+                <blockquote className='max-w-xl mx-auto mb-6 text-pink-600 bg-slate-900 p-6 text-xl font-semibold italic rounded-md dark:bg-slate-700'>
+                  {children}
+                </blockquote>
+              ),
+              image: ({ src, altText, height, width }) => (
+                <Image src={src} alt={altText} height={height} width={width} />
+              ),
             }}
           />
         )}
