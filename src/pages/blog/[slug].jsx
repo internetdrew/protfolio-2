@@ -122,7 +122,9 @@ const Post = ({ post }) => {
             renderers={{
               p: ({ children }) => <p className='text-2xl my-3'>{children}</p>,
               h2: ({ children }) => (
-                <h2 className='text-pink-600 font-bold text-4xl'>{children}</h2>
+                <h2 className='text-pink-600 font-bold text-4xl mt-10'>
+                  {children}
+                </h2>
               ),
               li: ({ children }) => (
                 <li className='text-2xl items-center mb-1'>{children}</li>
