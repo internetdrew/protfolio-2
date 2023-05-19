@@ -78,7 +78,7 @@ const Post = ({ post }) => {
   return (
     <Layout>
       <Head>
-        <title>{`${post?.title} by ${post?.author?.name}`}</title>
+        <title>{`${post?.title}`}</title>
         <meta
           property='og:title'
           content={`${post?.title} by ${post?.author?.name}`}

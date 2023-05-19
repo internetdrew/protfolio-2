@@ -38,7 +38,7 @@ export default function Blog({ posts }) {
       <Head>
         <title>Andrew Rowley's Blog</title>
       </Head>
-      <div className='pt-40 grid grid-cols-1 sm:grid-cols-2 gap-16 max-w-5xl mx-auto dark:text-slate-200'>
+      <div className='pt-40 grid grid-flow-dense grid-cols-1 sm:grid-cols-2 gap-16 max-w-5xl mx-auto dark:text-slate-200'>
         {posts.map(post => (
           <BlogCard key={post?.id} post={post} />
         ))}
