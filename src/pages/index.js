@@ -1,9 +1,10 @@
 import Head from 'next/head';
+import { request, gql } from 'graphql-request';
 import { Hero, About, Projects, Contact, Layout } from '@/src/components';
 
-export default function Home() {
+export default function Home({ projects }) {
   return (
-    <Layout title='Andrew Rowley — Software Engineer'>
+    <Layout>
       <Head>
         <title>Andrew Rowley — Software Engineer</title>
         <meta property='og:title' content='Andrew Rowley — Software Engineer' />
@@ -23,8 +24,32 @@ export default function Home() {
       </Head>
       <Hero />
       <About />
-      <Projects />
+      <Projects projects={projects} />
       <Contact />
     </Layout>
   );
 }
+
+const query = gql`
+  query GetProjects {
+    projects(orderBy: publishedAt_DESC) {
+      id
+      liveDemoUrl
+      githubUrl
+      desc
+      blogUrl
+      coverPhoto {
+        url
+      }
+      title
+    }
+  }
+`;
+
+export const getStaticProps = async () => {
+  const { projects } = await request(process.env.HYGRAPH_API_ENDPOINT, query);
+
+  return {
+    props: { projects },
+  };
+};
