@@ -32,7 +32,7 @@ export default function Home({ projects }) {
 
 const projectsQuery = gql`
   query GetProjects {
-    projects(orderBy: publishedAt_DESC) {
+    projects(orderBy: createdAt_DESC) {
       id
       liveDemoUrl
       githubUrl
