@@ -30,7 +30,7 @@ export default function Home({ projects }) {
   );
 }
 
-const query = gql`
+const projectsQuery = gql`
   query GetProjects {
     projects(orderBy: publishedAt_DESC) {
       id
@@ -47,7 +47,10 @@ const query = gql`
 `;
 
 export const getStaticProps = async () => {
-  const { projects } = await request(process.env.HYGRAPH_API_ENDPOINT, query);
+  const { projects } = await request(
+    process.env.HYGRAPH_API_ENDPOINT,
+    projectsQuery
+  );
 
   return {
     props: { projects },
