@@ -13,7 +13,7 @@ const Card = ({ project }) => {
   } = project;
 
   return (
-    <div className='bg-slate-100 py-6 rounded-lg overflow-hidden border-2 hover:shadow-xl hover:shadow-pink-600/50'>
+    <div className='bg-slate-100 pb-6 rounded-lg overflow-hidden border-2 hover:shadow-xl hover:shadow-pink-600/50'>
       <div className='w-full opacity-70 hover:opacity-100 transition-all duration-300'>
         <Image
           src={url}
