@@ -8,7 +8,7 @@ const Projects = ({ projects }) => {
       </h3>
       <div className='grid lg:grid-cols-2 gap-10'>
         {projects.map(project => (
-          <Card key={project.name} project={project} />
+          <Card key={project?.title} project={project} />
         ))}
       </div>
     </section>
