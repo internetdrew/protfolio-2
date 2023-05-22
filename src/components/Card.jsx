@@ -1,8 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { AiFillGithub, AiOutlineLink } from 'react-icons/ai';
 
 const Card = ({ project }) => {
-  console.log(project);
   const {
     title,
     desc,
