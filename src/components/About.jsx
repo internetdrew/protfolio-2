@@ -20,18 +20,12 @@ const About = () => {
           </a>
         </div>
         <p className='text-xl text-gray-800 dark:text-slate-200'>
-          I began my programming journey in 2021 by learning Python, which
-          tapped me into my childhood self — a kid who wrote macros that
-          automated gameplay while he was out running errands.
+          I'm Andrew, a passionate software engineer dedicated to crafting
+          quality software with a focus on user experience, performance, and AI
+          integration.
           <br />
           <br />
-          Nowadays, I'm all about pragmatic programming, clean code, and
-          creating intuitive, scalable, enjoyable software on the internet.
-          <br />
-          <br />
-          <span className='font-bold'>
-            And I'm on the hunt for a full-time role!
-          </span>
+          Let's build something extraordinary!
         </p>
       </div>
     </section>
