@@ -78,11 +78,8 @@ const Post = ({ post }) => {
   return (
     <Layout>
       <Head>
-        <title>{`${post?.title}`}</title>
-        <meta
-          property='og:title'
-          content={`${post?.title} by ${post?.author?.name}`}
-        />
+        <title>{post?.title}</title>
+        <meta property='og:title' content={post?.title} />
         <meta property='og:type' content='article' />
         <meta property='og:image' content={post?.coverPhoto?.url} />
         <meta
@@ -91,10 +88,7 @@ const Post = ({ post }) => {
         />
         <meta name='twitter:card' content='summary_large_image' />
 
-        <meta
-          property='og:description'
-          content={`A blog post written by ${post?.author?.name}.`}
-        />
+        <meta property='og:description' content={post?.excerpt} />
         <meta property='og:site_name' content='Internet Drew' />
         <meta name='twitter:image:alt' content='Alt text for image' />
       </Head>
@@ -127,19 +121,24 @@ const Post = ({ post }) => {
                 </h2>
               ),
               li: ({ children }) => (
-                <li className='text-2xl items-center mb-1'>{children}</li>
+                <li className='text-2xl items-center mb-1 pl-6 flex'>
+                  <span className='mr-2 mb-auto'>•</span>
+                  <div>{children}</div>
+                </li>
               ),
               ol: ({ children }) => (
                 <ol className='list-decimal mb-6'>{children}</ol>
               ),
-              ul: ({ children }) => <ul className='mb-6'>{children}</ul>,
+              ul: ({ children }) => (
+                <ul className='list-disc mb-6'>{children}</ul>
+              ),
               h3: ({ children }) => (
                 <h3 className='text-pink-600 font-semibold text-3xl'>
                   {children}
                 </h3>
               ),
               bold: ({ children }) => (
-                <strong className='text-pink-600'>{children}</strong>
+                <strong className='font-bold'>{children}</strong>
               ),
               code_block: ({ children }) => (
                 <pre>
