@@ -21,6 +21,14 @@ export default function Home({ projects }) {
         />
         <meta property='og:site_name' content='Internet Drew' />
         <meta name='twitter:image:alt' content='Alt text for image' />
+        <link rel='icon' href='/favicon.ico' type='image/x-icon' />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link rel='icon' sizes='192x192' href='/android-chrome-192x192.png' />
+        <link rel='icon' sizes='512x512' href='/android-chrome-512x512.png' />
       </Head>
       <Hero />
       <About />
