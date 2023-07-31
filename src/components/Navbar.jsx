@@ -44,15 +44,6 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <a
-              href={process.env.NEXT_PUBLIC_RESUME_FILE}
-              download={process.env.NEXT_PUBLIC_RESUME_FILE}
-              className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-200 font-semibold px-4 py-2 rounded-lg md:ml-2 text-lg'
-            >
-              Resume
-            </a>
-          </li>
-          <li>
             {darkMode ? (
               <MdLightMode
                 className='cursor-pointer text-2xl text-pink-600 mx-auto'
