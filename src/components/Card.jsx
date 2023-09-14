@@ -43,6 +43,7 @@ const Card = ({ project }) => {
               <a
                 href={liveDemoUrl}
                 target='_blank'
+                aria-label='Link to live project'
                 className='hover:text-cyan-500 duration-300'
               >
                 <AiOutlineLink />
@@ -52,6 +53,7 @@ const Card = ({ project }) => {
               <a
                 href={githubUrl}
                 target='_blank'
+                aria-label='Link to project github'
                 className='hover:text-cyan-500 duration-300'
               >
                 <AiFillGithub />
