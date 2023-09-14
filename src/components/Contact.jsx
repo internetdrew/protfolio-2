@@ -107,7 +107,7 @@ const Contact = () => {
           <textarea
             cols='30'
             rows='8'
-            id='messages'
+            id='message'
             className='p-4 text-xl rounded-lg outline-none shadow-lg'
             {...register('message')}
           />
