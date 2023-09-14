@@ -8,3 +8,4 @@ export { default as Footer } from './Footer';
 export { default as Layout } from './Layout';
 export { default as BlogCard } from './BlogCard';
 export { default as Author } from './Author';
+export { default as SocialLinks } from './SocialLinks';

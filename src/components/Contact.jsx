@@ -51,17 +51,17 @@ const Contact = () => {
 
   return (
     <section id='contact' className='w-full mx-auto mt-20 md:w-5/6 pb-10'>
-      <h3 className='text-center text-3xl font-bold mb-4 dark:text-cyan-400 md:text-4xl'>
+      <h3 className='text-center text-3xl font-bold mb-4 dark:text-[#2AD5EF] md:text-4xl'>
         Contact
       </h3>
-      <p className='text-2xl text-center text-gray-800 mb-6 dark:text-gray-400'>
+      <p className='text-2xl text-center text-gray-800 mb-6 dark:text-slate-200'>
         If you'd like to get in touch, feel free to send a message.
       </p>
       <form
         onSubmit={handleSubmit(sendEmail)}
         className='w-full lg:w-3/5 mx-auto flex flex-col gap-4'
       >
-        <div className='flex flex-col'>
+        <div className='flex flex-col gap-1'>
           <label
             htmlFor='name'
             className='text-xl font-medium dark:text-cyan-400 '
@@ -71,14 +71,14 @@ const Contact = () => {
           <input
             type='text'
             id='name'
-            className='p-3 text-xl rounded-lg outline-none shadow-lg'
+            className='p-3 text-xl rounded-lg outline-none focus:outline-slate-900 dark:focus:outline-cyan-400 shadow-lg'
             {...register('name')}
           />
           <small className='dark:text-cyan-400 text-sm mt-1'>
             {errors?.name?.message}
           </small>
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col gap-1'>
           <label
             htmlFor='email'
             className='text-xl font-medium dark:text-cyan-400'
@@ -88,14 +88,14 @@ const Contact = () => {
           <input
             type='email'
             id='email'
-            className='p-3 text-xl rounded-lg outline-none shadow-lg'
+            className='p-3 text-xl rounded-lg outline-none shadow-lg focus:outline-slate-900 dark:focus:outline-cyan-400'
             {...register('email')}
           />
           <small className='dark:text-cyan-400 text-sm mt-1'>
             {errors?.email?.message}
           </small>
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col gap-1'>
           <label
             htmlFor='message'
             className='text-xl font-medium dark:text-cyan-400'
@@ -106,7 +106,7 @@ const Contact = () => {
             cols='30'
             rows='8'
             id='message'
-            className='p-4 text-xl rounded-lg outline-none shadow-lg'
+            className='p-4 text-xl rounded-lg outline-none shadow-lg focus:outline-slate-900 dark:focus:outline-cyan-400'
             {...register('message')}
           />
           <small className='dark:text-cyan-400 text-sm mt-1'>
@@ -115,7 +115,7 @@ const Contact = () => {
         </div>
         <button
           type='submit'
-          className='bg-[#2FD5EE] text-slate-900 font-semibold px-4 py-2 rounded-lg text-xl shadow-lg hover:bg-cyan-500 duration-300'
+          className='bg-slate-900 text-slate-200 font-semibold px-4 py-2 rounded-lg text-xl shadow-lg hover:bg-cyan-500 duration-300 dark:bg-[#2FD5EE] dark:text-slate-900'
         >
           Send
         </button>

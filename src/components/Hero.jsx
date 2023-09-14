@@ -2,6 +2,7 @@ import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
 import me from '/public/me.png';
+import { SocialLinks } from '.';
 
 const Hero = () => {
   return (
@@ -19,24 +20,7 @@ const Hero = () => {
           I build user-friendly app experiences on the internet.
         </p>
       </div>
-      <div className='text-5xl flex justify-center gap-4 mb-10 text-slate-900 dark:text-cyan-400'>
-        <a
-          href='https://www.linkedin.com/in/internetdrew/'
-          target='_blank'
-          aria-label='Link to LinkedIn profile'
-          className='hover:text-cyan-500 duration-300'
-        >
-          <AiFillLinkedin />
-        </a>
-        <a
-          href='https://github.com/internetdrew'
-          target='_blank'
-          aria-label='Link to GitHub'
-          className='hover:text-cyan-500 duration-300'
-        >
-          <AiFillGithub />
-        </a>
-      </div>
+      <SocialLinks />
       <div className='relative bg-gradient-to-b flex mx-auto justify-center from-cyan-900 to-cyan-400 rounded-full w-60 h-60  overflow-hidden mt-2 sm:h-80 sm:w-80'>
         <Image
           src={me}
