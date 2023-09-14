@@ -33,6 +33,7 @@ const Card = ({ project }) => {
             <Link
               href={blogUrl}
               className='px-4 py-2 bg-gradient-to-r from-pink-600 to-pink-700 text-slate-200 font-semibold text-lg rounded-lg mr-auto'
+              aria-label={`Link to project titled ${project.title}`}
             >
               Read about it
             </Link>

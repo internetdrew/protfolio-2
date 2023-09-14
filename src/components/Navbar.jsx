@@ -20,7 +20,11 @@ const Navbar = () => {
       className='bg-slate-100 fixed top-0 left-0 w-full py-6 px-10 mb-12 flex items-center justify-between z-10 md:px-20 lg:px-40 text-gray-900 dark:bg-gray-900'
       onClick={handleNavClick}
     >
-      <Link href={'/'} className='text-2xl font-semibold dark:text-pink-600'>
+      <Link
+        href={'/'}
+        className='text-2xl font-semibold dark:text-pink-600'
+        aria-label='Link to home page'
+      >
         Andrew Rowley
       </Link>
       <div
@@ -35,9 +39,15 @@ const Navbar = () => {
               className='capitalize text-2xl font-semibold cursor-pointer dark:text-pink-600 md:text-xl'
             >
               {section === 'blog' ? (
-                <Link href={`/${section}`}>{section}</Link>
+                <Link href={`/${section}`} aria-label='Link to blog page'>
+                  {section}
+                </Link>
               ) : (
-                <Link href={`/#${section}`} scroll={false}>
+                <Link
+                  href={`/#${section}`}
+                  scroll={false}
+                  aria-label={`Link to ${section} section`}
+                >
                   {section}
                 </Link>
               )}

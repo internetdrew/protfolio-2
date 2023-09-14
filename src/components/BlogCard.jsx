@@ -8,7 +8,11 @@ import { Author } from '@/src/components';
 const BlogCard = ({ post }) => {
   return (
     <div className='flex mx-auto max-w-lg min-h-max bg-slate-100 border-2 text-slate-900 rounded-lg py-6 px-4 justify-center duration-300 hover:shadow-xl hover:shadow-pink-600/50'>
-      <Link href={`/blog/${post?.slug}`} className='flex flex-col'>
+      <Link
+        href={`/blog/${post?.slug}`}
+        className='flex flex-col'
+        aria-label={`Visit blog post titled ${post?.title}`}
+      >
         <Image
           src={post?.coverPhoto?.url}
           width={500}

@@ -8,7 +8,9 @@ const Hero = () => {
     <section className='pt-40' id='home'>
       <div className='text-center'>
         <h2 className='text-3xl pt-2 font-bold dark:text-slate-200'>
-          <Link href='/'>Andrew Rowley</Link>
+          <Link href='/' aria-label='Link to home page'>
+            Andrew Rowley
+          </Link>
         </h2>
         <h3 className='text-4xl font-semibold py-4 text-pink-700 '>
           Software Engineer
@@ -18,10 +20,18 @@ const Hero = () => {
         </p>
       </div>
       <div className='text-5xl flex justify-center gap-4 mb-10 text-pink-700'>
-        <a href='https://www.linkedin.com/in/internetdrew/' target='_blank'>
+        <a
+          href='https://www.linkedin.com/in/internetdrew/'
+          target='_blank'
+          aria-label='Link to LinkedIn profile'
+        >
           <AiFillLinkedin />
         </a>
-        <a href='https://github.com/internetdrew' target='_blank'>
+        <a
+          href='https://github.com/internetdrew'
+          target='_blank'
+          aria-label='Link to GitHub'
+        >
           <AiFillGithub />
         </a>
       </div>
