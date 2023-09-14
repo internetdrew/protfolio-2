@@ -2,6 +2,7 @@ import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
 import me from '/public/me.png';
+
 const Hero = () => {
   return (
     <section className='pt-40' id='home'>

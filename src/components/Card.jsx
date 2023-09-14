@@ -18,9 +18,9 @@ const Card = ({ project }) => {
         <Image
           src={url}
           alt={`${project.name} screenshot`}
-          className='object-cover'
-          height={1000}
-          width={1000}
+          className='w-full h-auto'
+          height={500}
+          width={500}
           priority
         />
       </div>
