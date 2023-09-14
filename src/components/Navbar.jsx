@@ -37,6 +37,7 @@ const Navbar = () => {
                 <Link
                   href={`/#${section}`}
                   scroll={false}
+                  onClick={() => setShowMobileMenu(false)}
                   aria-label={`Link to ${section} section`}
                 >
                   {section}
