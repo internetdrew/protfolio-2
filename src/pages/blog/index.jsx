@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 const query = gql`
   query MyQuery {
-    posts(orderBy: publishedAt_DESC) {
+    posts(orderBy: publishedAt_ASC) {
       id
       publishDate
       slug
