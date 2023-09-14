@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Analytics } from '@vercel/analytics/react';
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ export default function App({ Component, pageProps }) {
           <link rel='icon' sizes='512x512' href='/android-chrome-512x512.png' />
         </Head>
         <Component {...pageProps} />
+        <Analytics />
       </RecoilRoot>
     </QueryClientProvider>
   );
