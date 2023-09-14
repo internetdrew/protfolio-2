@@ -72,6 +72,7 @@ const Contact = () => {
           </label>
           <input
             type='text'
+            id='name'
             className='p-3 text-xl rounded-lg outline-none shadow-lg'
             {...register('name')}
           />
@@ -88,6 +89,7 @@ const Contact = () => {
           </label>
           <input
             type='email'
+            id='email'
             className='p-3 text-xl rounded-lg outline-none shadow-lg'
             {...register('email')}
           />
@@ -105,6 +107,7 @@ const Contact = () => {
           <textarea
             cols='30'
             rows='8'
+            id='messages'
             className='p-4 text-xl rounded-lg outline-none shadow-lg'
             {...register('message')}
           />

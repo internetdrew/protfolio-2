@@ -60,6 +60,7 @@ const Navbar = () => {
       </div>
       <button
         className='text-4xl cursor-pointer text-pink-600 md:hidden'
+        aria-label='menu button'
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
         {showMobileMenu ? <MdClose /> : <MdMenu />}
