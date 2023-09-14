@@ -60,7 +60,7 @@ const Navbar = () => {
         </ul>
       </div>
       <button
-        className='text-4xl cursor-pointer text-cyan-400 md:hidden'
+        className='text-4xl cursor-pointer text-slate-900 dark:text-cyan-400 md:hidden'
         aria-label='menu button'
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >

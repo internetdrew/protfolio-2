@@ -9,7 +9,7 @@ const Author = ({ post, inCard }) => {
         height={500}
         alt='author image'
         priority
-        className='w-14 h-14 rounded-full border-solid border-2 p-1 border-pink-600 mr-2 object-cover'
+        className='w-14 h-14 rounded-full border-solid border-2 p-1 border-cyan-400 mr-2 object-cover'
       />
       <div className={`${!inCard ? 'dark:text-slate-200' : ''}`}>
         <h3 className='font-semibold text-lg -mb-1'>{post?.author?.name}</h3>
