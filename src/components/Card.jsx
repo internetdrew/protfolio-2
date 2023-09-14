@@ -21,7 +21,7 @@ const Card = ({ project }) => {
           className='w-full h-auto'
           height={500}
           width={500}
-          priority
+          loading='lazy'
         />
       </div>
       <div className='px-8 pt-6 bg-slate-100 h-full'>
