@@ -13,7 +13,7 @@ const Card = ({ project }) => {
   } = project;
 
   return (
-    <div className='bg-slate-100 pb-6 rounded-lg overflow-hidden border-2 hover:shadow-xl hover:shadow-cyan-400/50'>
+    <div className='bg-slate-100 pb-6 duration-300 rounded-lg overflow-hidden border-2 hover:shadow-xl hover:shadow-slate-600/50 dark:hover:shadow-cyan-400/50'>
       <div className='w-full opacity-70 hover:opacity-100 transition-all duration-300'>
         <Image
           src={url}
@@ -32,7 +32,7 @@ const Card = ({ project }) => {
           {blogUrl ? (
             <Link
               href={blogUrl}
-              className='px-4 py-2 bg-[#2FD5EE] text-slate-900 font-semibold text-lg rounded-lg mr-auto hover:bg-cyan-500'
+              className='px-4 py-2 bg-slate-900 text-slate-100 dark:bg-[#2FD5EE] dark:text-slate-900 font-semibold text-lg rounded-lg mr-auto hover:bg-cyan-500 duration-300'
               aria-label={`Link to project titled ${project.title}`}
             >
               Read about it
@@ -40,12 +40,20 @@ const Card = ({ project }) => {
           ) : null}
           <ul className='flex justify-end gap-2 text-3xl text-gray-900'>
             <li>
-              <a href={liveDemoUrl} target='_blank'>
+              <a
+                href={liveDemoUrl}
+                target='_blank'
+                className='hover:text-cyan-500 duration-300'
+              >
                 <AiOutlineLink />
               </a>
             </li>
             <li>
-              <a href={githubUrl} target='_blank'>
+              <a
+                href={githubUrl}
+                target='_blank'
+                className='hover:text-cyan-500 duration-300'
+              >
                 <AiFillGithub />
               </a>
             </li>

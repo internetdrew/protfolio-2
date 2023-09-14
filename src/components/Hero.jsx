@@ -12,14 +12,14 @@ const Hero = () => {
             Andrew Rowley
           </Link>
         </h2>
-        <h3 className='text-4xl font-semibold py-4 text-cyan-400 '>
+        <h3 className='text-4xl font-semibold py-4 dark:text-cyan-400 '>
           Software Engineer
         </h3>
-        <p className='text-2xl text-gray-800 mb-6 dark:text-slate-300'>
+        <p className='text-2xl mb-6 text-slate-900 dark:text-slate-300'>
           I build user-friendly app experiences on the internet.
         </p>
       </div>
-      <div className='text-5xl flex justify-center gap-4 mb-10 text-cyan-400'>
+      <div className='text-5xl flex justify-center gap-4 mb-10 text-slate-900 dark:text-cyan-400'>
         <a
           href='https://www.linkedin.com/in/internetdrew/'
           target='_blank'
