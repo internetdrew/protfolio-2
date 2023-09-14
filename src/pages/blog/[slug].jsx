@@ -93,7 +93,7 @@ const Post = ({ post }) => {
         <meta name='twitter:image:alt' content='Alt text for image' />
       </Head>
       <article className='pt-20 pb-20 mx-auto max-w-3xl love inset-y-auto1xl language-javascript dark:text-slate-200 flex flex-col  md:pt-40'>
-        <h1 className='mt-10 text-center text-pink-600 font-bold text-4xl sm:text-6xl'>
+        <h1 className='mt-10 text-center text-cyan-400 font-bold text-4xl sm:text-6xl'>
           {post?.title}
         </h1>
         <blockquote className='text-center mt-4 text-xl sm:text-2xl font-medium max-w-2xl text-slate-900 mb-4 dark:text-slate-200'>
@@ -116,7 +116,7 @@ const Post = ({ post }) => {
             renderers={{
               p: ({ children }) => <p className='text-2xl my-3'>{children}</p>,
               h2: ({ children }) => (
-                <h2 className='text-pink-600 font-bold text-4xl mt-10'>
+                <h2 className='text-cyan-400 font-bold text-4xl mt-10'>
                   {children}
                 </h2>
               ),
@@ -133,7 +133,7 @@ const Post = ({ post }) => {
                 <ul className='list-disc mb-6'>{children}</ul>
               ),
               h3: ({ children }) => (
-                <h3 className='text-pink-600 font-semibold text-3xl'>
+                <h3 className='text-cyan-400 font-semibold text-3xl'>
                   {children}
                 </h3>
               ),
@@ -151,12 +151,12 @@ const Post = ({ post }) => {
                 </span>
               ),
               a: ({ children, href }) => (
-                <a href={href} target='_blank' className='text-pink-600'>
+                <a href={href} target='_blank' className='text-cyan-400'>
                   {children}
                 </a>
               ),
               blockquote: ({ children }) => (
-                <blockquote className='max-w-xl mx-auto mb-6 text-pink-600 bg-slate-900 p-6 text-xl font-semibold italic rounded-md dark:bg-slate-700'>
+                <blockquote className='max-w-xl mx-auto mb-6 text-cyan-400 bg-slate-900 p-6 text-xl font-semibold italic rounded-md dark:bg-slate-700'>
                   {children}
                 </blockquote>
               ),

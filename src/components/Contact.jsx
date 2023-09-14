@@ -1,5 +1,3 @@
-'use client';
-
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -53,7 +51,7 @@ const Contact = () => {
 
   return (
     <section id='contact' className='w-full mx-auto mt-20 md:w-5/6 pb-10'>
-      <h3 className='text-center text-3xl font-bold mb-4 dark:text-pink-600 md:text-4xl'>
+      <h3 className='text-center text-3xl font-bold mb-4 dark:text-cyan-400 md:text-4xl'>
         Contact
       </h3>
       <p className='text-2xl text-center text-gray-800 mb-6 dark:text-gray-400'>
@@ -66,7 +64,7 @@ const Contact = () => {
         <div className='flex flex-col'>
           <label
             htmlFor='name'
-            className='text-xl font-medium dark:text-pink-600 '
+            className='text-xl font-medium dark:text-cyan-400 '
           >
             Name
           </label>
@@ -76,14 +74,14 @@ const Contact = () => {
             className='p-3 text-xl rounded-lg outline-none shadow-lg'
             {...register('name')}
           />
-          <small className='dark:text-pink-600 text-sm mt-1'>
+          <small className='dark:text-cyan-400 text-sm mt-1'>
             {errors?.name?.message}
           </small>
         </div>
         <div className='flex flex-col'>
           <label
             htmlFor='email'
-            className='text-xl font-medium dark:text-pink-600'
+            className='text-xl font-medium dark:text-cyan-400'
           >
             Email
           </label>
@@ -93,14 +91,14 @@ const Contact = () => {
             className='p-3 text-xl rounded-lg outline-none shadow-lg'
             {...register('email')}
           />
-          <small className='dark:text-pink-600 text-sm mt-1'>
+          <small className='dark:text-cyan-400 text-sm mt-1'>
             {errors?.email?.message}
           </small>
         </div>
         <div className='flex flex-col'>
           <label
             htmlFor='message'
-            className='text-xl font-medium dark:text-pink-600'
+            className='text-xl font-medium dark:text-cyan-400'
           >
             Message
           </label>
@@ -111,13 +109,13 @@ const Contact = () => {
             className='p-4 text-xl rounded-lg outline-none shadow-lg'
             {...register('message')}
           />
-          <small className='dark:text-pink-600 text-sm mt-1'>
+          <small className='dark:text-cyan-400 text-sm mt-1'>
             {errors?.message?.message}
           </small>
         </div>
         <button
           type='submit'
-          className='bg-gradient-to-r from-pink-600 to-pink-700 text-slate-200 font-semibold px-4 py-2 rounded-lg text-xl shadow-lg'
+          className='bg-[#2FD5EE] text-slate-900 font-semibold px-4 py-2 rounded-lg text-xl shadow-lg hover:bg-cyan-500 duration-300'
         >
           Send
         </button>

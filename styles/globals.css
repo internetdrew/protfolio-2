@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.accent-color {
+  @apply text-cyan-400;
+}
+
 * {
   padding: 0;
   margin: 0;

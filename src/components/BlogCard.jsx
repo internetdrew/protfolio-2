@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
@@ -22,7 +20,7 @@ const BlogCard = ({ post }) => {
           className='object-cover'
         />
         <div className='mt-4 mb-4'>
-          <h2 className='text-3xl mb-1 font-semibold text-pink-600'>
+          <h2 className='text-3xl mb-1 font-semibold text-cyan-400'>
             {post.title}
           </h2>
           <p className='text-lg font-medium'>{post?.excerpt}</p>
