@@ -41,18 +41,6 @@ export default function App({ Component, pageProps }) {
           <link rel='icon' sizes='192x192' href='/android-chrome-192x192.png' />
           <link rel='icon' sizes='512x512' href='/android-chrome-512x512.png' />
         </Head>
-        <Script
-          strategy='afterInteractive'
-          src='https://www.googletagmanager.com/gtag/js?id='
-        />
-        <Script>
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-3Q5Y9FR4KE')`}
-        </Script>
         <Component {...pageProps} />
       </RecoilRoot>
     </QueryClientProvider>

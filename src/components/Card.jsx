@@ -22,6 +22,7 @@ const Card = ({ project }) => {
           height={500}
           width={500}
           loading='lazy'
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />
       </div>
       <div className='px-8 pt-6 bg-slate-100 h-full'>
