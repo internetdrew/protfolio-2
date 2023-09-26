@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 const schema = z.object({
   name: z.string().min(1, { message: 'Name is required before sending.' }),
@@ -20,7 +21,7 @@ const Contact = () => {
     handleSubmit,
     reset,
     formState: { errors },
-    formState: { isSubmitSuccessful },
+    formState: { isSubmitSuccessful, isSubmitting, isSubmitted },
   } = useForm({
     resolver: zodResolver(schema),
   });
@@ -31,22 +32,14 @@ const Contact = () => {
     }
   }, [isSubmitSuccessful, reset]);
 
-  const sendEmail = formValues => {
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_KEY,
-        process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
-        formValues,
-        process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
-      )
-      .then(
-        res => {
-          console.log(res);
-        },
-        error => {
-          console.error(error.text);
-        }
-      );
+  const sendEmail = async formValues => {
+    await emailjs.send(
+      process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_KEY,
+      process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
+      formValues,
+      process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
+    );
+    toast.success('Successfully sent. Thanks!');
   };
 
   return (
@@ -59,7 +52,7 @@ const Contact = () => {
       </p>
       <form
         onSubmit={handleSubmit(sendEmail)}
-        className='w-full lg:w-3/5 mx-auto flex flex-col gap-4'
+        className='w-full lg:w-3/5 mx-auto flex flex-col gap-4 caret-pink-500'
       >
         <div className='flex flex-col gap-1'>
           <label
@@ -117,7 +110,7 @@ const Contact = () => {
           type='submit'
           className='bg-slate-900 text-slate-200 font-semibold px-4 py-2 rounded-lg text-xl shadow-lg hover:bg-cyan-500 duration-300 dark:bg-[#2FD5EE] dark:text-slate-900'
         >
-          Send
+          {isSubmitting ? 'Sending...' : 'Send'}
         </button>
       </form>
     </section>

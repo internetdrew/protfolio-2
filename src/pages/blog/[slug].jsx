@@ -43,15 +43,6 @@ const slugQuery = gql`
   }
 `;
 
-export const getStaticPaths = async () => {
-  const { posts } = await request(process.env.HYGRAPH_API_ENDPOINT, slugQuery);
-
-  return {
-    paths: posts.map(post => ({ params: { slug: post.slug } })),
-    fallback: 'blocking',
-  };
-};
-
 export const getStaticProps = async ({ params }) => {
   const { slug } = params;
 
@@ -61,6 +52,15 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: { post },
     revalidate: 10,
+  };
+};
+
+export const getStaticPaths = async () => {
+  const { posts } = await request(process.env.HYGRAPH_API_ENDPOINT, slugQuery);
+
+  return {
+    paths: posts.map(post => ({ params: { slug: post.slug } })),
+    fallback: 'blocking',
   };
 };
 
@@ -79,16 +79,25 @@ const Post = ({ post }) => {
     <Layout>
       <Head>
         <title>{post?.title}</title>
+        <meta property='title' content={post?.title} />
         <meta property='og:title' content={post?.title} />
+        <meta property='type' content='article' />
         <meta property='og:type' content='article' />
+        <meta property='image' content={post?.coverPhoto?.url} />
         <meta property='og:image' content={post?.coverPhoto?.url} />
         <meta
           property='og:url'
           content={`https://internetdrew.com/blog/${post?.slug}`}
         />
+        <meta
+          property='url'
+          content={`https://internetdrew.com/blog/${post?.slug}`}
+        />
         <meta name='twitter:card' content='summary_large_image' />
 
+        <meta property='description' content={post?.excerpt} />
         <meta property='og:description' content={post?.excerpt} />
+        <meta property='site_name' content='Internet Drew' />
         <meta property='og:site_name' content='Internet Drew' />
         <meta name='twitter:image:alt' content='Alt text for image' />
       </Head>
