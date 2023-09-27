@@ -75,109 +75,117 @@ const Post = ({ post }) => {
     if (showRichText) Prism.highlightAll();
   }, []);
 
-  return (
-    <Layout>
-      <Head>
-        <title>{post?.title}</title>
-        <meta property='title' content={post?.title} />
-        <meta property='og:title' content={post?.title} />
-        <meta property='type' content='article' />
-        <meta property='og:type' content='article' />
-        <meta property='image' content={post?.coverPhoto?.url} />
-        <meta property='og:image' content={post?.coverPhoto?.url} />
-        <meta
-          property='og:url'
-          content={`https://internetdrew.com/blog/${post?.slug}`}
-        />
-        <meta
-          property='url'
-          content={`https://internetdrew.com/blog/${post?.slug}`}
-        />
-        <meta name='twitter:card' content='summary_large_image' />
-
-        <meta property='description' content={post?.excerpt} />
-        <meta property='og:description' content={post?.excerpt} />
-        <meta property='site_name' content='Internet Drew' />
-        <meta property='og:site_name' content='Internet Drew' />
-        <meta name='twitter:image:alt' content='Alt text for image' />
-      </Head>
-      <article className='pt-20 pb-20 mx-auto max-w-3xl love inset-y-auto1xl language-javascript dark:text-slate-200 flex flex-col  md:pt-40'>
-        <h1 className='mt-10 text-center text-cyan-400 font-bold text-4xl sm:text-6xl'>
-          {post?.title}
-        </h1>
-        <blockquote className='text-center mt-4 text-xl sm:text-2xl font-medium max-w-2xl text-slate-900 mb-4 dark:text-slate-200'>
-          {post?.excerpt}
-        </blockquote>
-        <div className='self-center'>
-          <Author post={post} />
-        </div>
-        <Image
-          src={post?.coverPhoto?.url}
-          width={1200}
-          height={600}
-          alt='blog post image'
-          priority
-          className='my-10'
-        />
-        {showRichText && (
-          <RichText
-            content={post?.content?.raw.children}
-            renderers={{
-              p: ({ children }) => <p className='text-2xl my-3'>{children}</p>,
-              h2: ({ children }) => (
-                <h2 className='text-cyan-400 font-bold text-4xl mt-10'>
-                  {children}
-                </h2>
-              ),
-              li: ({ children }) => (
-                <li className='text-2xl items-center mb-1 pl-6 flex'>
-                  <span className='mr-2 mb-auto'>•</span>
-                  <div>{children}</div>
-                </li>
-              ),
-              ol: ({ children }) => (
-                <ol className='list-decimal mb-6'>{children}</ol>
-              ),
-              ul: ({ children }) => (
-                <ul className='list-disc mb-6'>{children}</ul>
-              ),
-              h3: ({ children }) => (
-                <h3 className='text-cyan-400 font-semibold text-3xl'>
-                  {children}
-                </h3>
-              ),
-              bold: ({ children }) => (
-                <strong className='font-bold'>{children}</strong>
-              ),
-              code_block: ({ children }) => (
-                <pre>
-                  <code>{children}</code>
-                </pre>
-              ),
-              code: ({ children }) => (
-                <span className='text-lg'>
-                  <code>{children}</code>
-                </span>
-              ),
-              a: ({ children, href }) => (
-                <a href={href} target='_blank' className='text-cyan-400'>
-                  {children}
-                </a>
-              ),
-              blockquote: ({ children }) => (
-                <blockquote className='max-w-xl mx-auto mb-6 text-cyan-400 bg-slate-900 p-6 text-xl font-semibold italic rounded-md dark:bg-slate-700'>
-                  {children}
-                </blockquote>
-              ),
-              image: ({ src, altText, height, width }) => (
-                <Image src={src} alt={altText} height={height} width={width} />
-              ),
-            }}
+  if (post && showRichText)
+    return (
+      <Layout>
+        <Head>
+          <title>{post?.title}</title>
+          <meta property='title' content={post?.title} />
+          <meta property='og:title' content={post?.title} />
+          <meta property='type' content='article' />
+          <meta property='og:type' content='article' />
+          <meta property='image' content={post?.coverPhoto?.url} />
+          <meta property='og:image' content={post?.coverPhoto?.url} />
+          <meta
+            property='og:url'
+            content={`https://internetdrew.com/blog/${post?.slug}`}
           />
-        )}
-      </article>
-    </Layout>
-  );
+          <meta
+            property='url'
+            content={`https://internetdrew.com/blog/${post?.slug}`}
+          />
+          <meta name='twitter:card' content='summary_large_image' />
+
+          <meta property='description' content={post?.excerpt} />
+          <meta property='og:description' content={post?.excerpt} />
+          <meta property='site_name' content='Internet Drew' />
+          <meta property='og:site_name' content='Internet Drew' />
+          <meta name='twitter:image:alt' content='Alt text for image' />
+        </Head>
+        <article className='pt-20 pb-20 mx-auto max-w-3xl love inset-y-auto1xl language-javascript dark:text-slate-200 flex flex-col  md:pt-40'>
+          <h1 className='mt-10 text-center text-cyan-400 font-bold text-4xl sm:text-6xl'>
+            {post?.title}
+          </h1>
+          <blockquote className='text-center mt-4 text-xl sm:text-2xl font-medium max-w-2xl text-slate-900 mb-4 dark:text-slate-200'>
+            {post?.excerpt}
+          </blockquote>
+          <div className='self-center'>
+            <Author post={post} />
+          </div>
+          <Image
+            src={post?.coverPhoto?.url}
+            width={1200}
+            height={600}
+            alt='blog post image'
+            priority
+            className='my-10'
+          />
+          {showRichText && (
+            <RichText
+              content={post?.content?.raw.children}
+              renderers={{
+                p: ({ children }) => (
+                  <p className='text-2xl my-3'>{children}</p>
+                ),
+                h2: ({ children }) => (
+                  <h2 className='text-cyan-400 font-bold text-4xl mt-10'>
+                    {children}
+                  </h2>
+                ),
+                li: ({ children }) => (
+                  <li className='text-2xl items-center mb-1 pl-6 flex'>
+                    <span className='mr-2 mb-auto'>•</span>
+                    <div>{children}</div>
+                  </li>
+                ),
+                ol: ({ children }) => (
+                  <ol className='list-decimal mb-6'>{children}</ol>
+                ),
+                ul: ({ children }) => (
+                  <ul className='list-disc mb-6'>{children}</ul>
+                ),
+                h3: ({ children }) => (
+                  <h3 className='text-cyan-400 font-semibold text-3xl'>
+                    {children}
+                  </h3>
+                ),
+                bold: ({ children }) => (
+                  <strong className='font-bold'>{children}</strong>
+                ),
+                code_block: ({ children }) => (
+                  <pre>
+                    <code>{children}</code>
+                  </pre>
+                ),
+                code: ({ children }) => (
+                  <span className='text-lg'>
+                    <code>{children}</code>
+                  </span>
+                ),
+                a: ({ children, href }) => (
+                  <a href={href} target='_blank' className='text-cyan-400'>
+                    {children}
+                  </a>
+                ),
+                blockquote: ({ children }) => (
+                  <blockquote className='max-w-xl mx-auto mb-6 text-cyan-400 bg-slate-900 p-6 text-xl font-semibold italic rounded-md dark:bg-slate-700'>
+                    {children}
+                  </blockquote>
+                ),
+                image: ({ src, altText, height, width }) => (
+                  <Image
+                    src={src}
+                    alt={altText}
+                    height={height}
+                    width={width}
+                  />
+                ),
+              }}
+            />
+          )}
+        </article>
+      </Layout>
+    );
 };
 
 export default Post;
