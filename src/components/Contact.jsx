@@ -39,7 +39,7 @@ const Contact = () => {
       formValues,
       process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
     );
-    toast.success('Successfully sent. Thanks!');
+    toast.success('👍🏾 Successfully sent. Thanks!');
   };
 
   return (

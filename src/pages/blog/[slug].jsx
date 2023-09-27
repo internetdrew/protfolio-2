@@ -75,7 +75,7 @@ const Post = ({ post }) => {
     if (showRichText) Prism.highlightAll();
   }, [showRichText]);
 
-  if (showRichText && post)
+  if (post && RichText)
     return (
       <Layout>
         <Head>
