@@ -68,14 +68,14 @@ const Post = ({ post }) => {
   const [showRichText, setShowRichText] = useState(false);
 
   useEffect(() => {
-    if (post) setShowRichText(true);
+    setShowRichText(true);
   }, []);
 
   useEffect(() => {
     if (showRichText) Prism.highlightAll();
-  }, []);
+  }, [showRichText]);
 
-  if (post && showRichText)
+  if (showRichText && post)
     return (
       <Layout>
         <Head>
